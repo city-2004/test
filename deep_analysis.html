@@ -2,121 +2,55 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>深度分析 - 正在开发</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度分析 - 开发中</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <style>
-        /* 基础样式和变量 - 保持与主页一致 */
-        :root {
-            --primary-color: #3661F0; 
-            --secondary-color: #00A968; 
-            --dark-bg: #1A1A2E; 
-            --light-text: #EAEAEA; 
-            --card-bg: #27273F;
-            --alert-color: #dc3545; /* 警告/提示红色 */
-            --border-radius: 10px;
-        }
+        :root { --primary:#3661F0; --success:#00A968; --dark:#1A1A2E; --card:#27273F; --text:#EAEAEA; }
+        body { margin:0; background:var(--dark); color:var(--text); font-family:'Segoe UI',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+        header { background:#161625; padding:18px 0; border-bottom:4px solid var(--primary); }
+        nav { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; }
+        .logo { font-weight:bold; color:var(--primary); font-size:1.5em; }
+        .nav-links a { color:var(--text); margin:0 15px; text-decoration:none; font-weight:600; }
+        .nav-links a.active { color:var(--success); }
+        .mobile-menu { display:none; font-size:1.8em; cursor:pointer; }
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            display: flex; 
-            flex-direction: column;
-            min-height: 100vh;
-        }
+        .container { flex:1; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px; }
+        .coming-soon { background:var(--card); padding:50px; border-radius:20px; max-width:600px; border-top:8px solid #dc3545; }
+        .coming-soon h1 { color:#dc3545; font-size:3em; }
+        .coming-soon p { font-size:1.3em; margin:20px 0; color:#ccc; }
 
-        /* 头部和导航 (保持一致) */
-        header { 
-            background-color: #161625; 
-            padding: 18px 0; 
-            border-bottom: 3px solid var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        nav {
-            width: 80%;
-            margin: auto;
-            display: flex;
-            justify-content: flex-start;
-        }
-        nav a { 
-            color: var(--light-text); 
-            margin-right: 30px; 
-            text-decoration: none; 
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+        footer { text-align:center; padding:25px; background:#111; color:#666; }
 
-        /* 容器和居中 */
-        .container { 
-            width: 80%; 
-            max-width: 800px;
-            margin: auto; 
-            text-align: center; 
-            padding: 60px; 
-            background: var(--card-bg); 
-            border-radius: var(--border-radius); 
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
-            border-top: 5px solid var(--alert-color);
-        }
-        .container h1 { 
-            color: var(--alert-color); 
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .container p { 
-            font-size: 1.2em;
-            color: #C0C0C0;
-        }
-        .module-focus {
-            color: var(--secondary-color);
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-
-        /* JS 简单动画 */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        @media (max-width:768px) { .nav-links { display:none; flex-direction:column; position:fixed; top:70px; left:0; width:100%; background:#161625; padding:20px; }
+            .nav-links.active { display:flex; } .mobile-menu { display:block; } }
     </style>
 </head>
 <body>
     <header>
-        <nav class="fade-in">
-            <a href="index.html">🏠 首页</a>
-            <a href="quick_gen.html">⚡ 快速生成</a>
-            <a href="deep_analysis.html">🔬 深度分析</a>
+        <nav>
+            <div class="logo">AI联名大师</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">首页</a>
+                <a href="quick_gen.html">快速生成</a>
+                <a href="deep_analysis.html" class="active">深度分析</a>
+            </div>
+            <div class="mobile-menu" id="mobileMenu"><i class="ri-menu-line"></i></div>
         </nav>
     </header>
 
-    <div class="container fade-in">
-        <h1>🚧 深度分析模块：开发中 🚧</h1>
-        <p>此模块将专注于基于</p>
-        <span class="module-focus">用户画像交叉分析</span>
-        <p>的深度合作洞察和精准匹配。</p>
-        <p style="margin-top: 30px; font-style: italic;">根据您的要求，当前功能正在找人负责开发，暂时留空。</p>
+    <div class="container">
+        <div class="coming-soon">
+            <h1>深度分析模块即将上线</h1>
+            <p>基于用户画像交叉分析的精准品牌匹配引擎</p>
+            <p style="color:var(--success); font-weight:bold;">预计2025年Q3上线，敬请期待</p>
+        </div>
     </div>
 
+    <footer>© 2025 AI联名大师</footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.classList.add('visible');
-                }, index * 200); 
-            });
-        });
+        document.getElementById('mobileMenu').onclick = () => document.getElementById('navLinks').classList.toggle('active');
     </script>
 </body>
 </html>
