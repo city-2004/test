@@ -95,7 +95,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer sk-你的DeepSeek密钥填这里（免费注册即可）'  // ← 替换成你的key
+                        'Authorization': 'Bearer sk-你的DeepSeek密钥填这里（免费注册即可）'  
                     },
                     body: JSON.stringify({
                         model: "deepseek-chat",
@@ -128,7 +128,7 @@
         function copyResult() {
             const text = document.getElementById('reportContent').innerText;
             navigator.clipboard.writeText(text);
-            alert('已复制到剪贴板！快去发给老板吧');
+            alert('已复制到剪贴板！');
         }
 
         // 加载动画
