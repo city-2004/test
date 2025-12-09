@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - AI 异业合作平台</title>
+    <style>
+        /* 基础样式和变量 */
+        :root {
+            --primary-color: #3661F0; /* 科技蓝 */
+            --secondary-color: #00A968; /* 活力绿 */
+            --dark-bg: #1A1A2E; /* 深色背景 */
+            --light-text: #EAEAEA; /* 浅色文本 */
+            --card-bg: #27273F;
+            --border-radius: 10px;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        /* 页面进入动画 - CSS 定义 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 头部和导航 */
+        header { 
+            background-color: #161625; 
+            padding: 18px 0; 
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+        nav a { 
+            color: var(--light-text); 
+            margin-right: 30px; 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 容器和标题 */
+        .container { 
+            width: 85%; 
+            max-width: 1200px;
+            margin: 50px auto; 
+            padding: 20px;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: var(--secondary-color);
+            font-size: 2em;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .tagline {
+            text-align: center;
+            font-size: 1.1em;
+            color: #AAAAAA;
+            margin-bottom: 50px;
+        }
+
+        /* 案例卡片 (6 个卡片仍然使用 3 列布局，但内容更丰富) */
+        .case-studies { 
+            display: grid; 
+            /* 保持 3 列布局，适配大屏幕 */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
+        .case-card { 
+            background: var(--card-bg); 
+            padding: 25px; 
+            border-radius: var(--border-radius); 
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s, border-left-color 0.3s; 
+            cursor: pointer; 
+        }
+        .case-card:hover {
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: 0 15px 30px rgba(54, 97, 240, 0.3); 
+            border-left-color: var(--secondary-color); 
+        }
+        .case-card h3 { 
+            color: var(--primary-color); 
+            font-size: 1.4em;
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+        .case-card:hover h3 {
+            color: var(--secondary-color);
+        }
+        .case-card strong {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="fade-in">
+            <a href="index.html">🏠 首页</a>
+            <a href="quick_gen.html">⚡ 快速生成</a>
+            <a href="deep_analysis.html">🔬 深度分析</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="fade-in">🚀 AI 驱动的异业合作爆点生成平台</h1>
+        <p class="tagline fade-in">利用 NLP、CV 和大模型技术，为您精准匹配合作机会并快速生成方案。</p>
+
+        <hr style="border-top: 1px dashed #444;" class="fade-in">
+
+        <h2 class="fade-in">精选合作案例库 (共 6 个)</h2>
+        <div class="case-studies">
+            <div class="case-card fade-in" onclick="alert('查看案例详情：山顶联名快闪咖啡馆')">
+                <h3>山顶联名快闪咖啡馆</h3>
+                <p><strong>匹配品牌:</strong> 户外运动品牌 A & 咖啡品牌 B</p>
+                <p><strong>成果要点:</strong> 强化“探索生活”品牌调性，实现曝光与用户体验双赢，精准覆盖目标群体。</p>
+            </div>
+            <div class="case-card fade-in" onclick="alert('查看案例详情：未来生活体验馆联动')">
+                <h3>未来生活体验馆联动</h3>
+                <p><strong>匹配品牌:</strong> 极简家居品牌 C & 智能科技品牌 D</p>
+                <p><strong>成果要点:</strong> 共同打造沉浸式未来场景，提升客单价，树立行业设计新标杆。</p>
+            </div>
+            <div class="case-card fade-in" onclick="alert('该案例仍在整理中...')">
+                <h3>[案例名称待定]</h3>
+                <p><strong>匹配品牌:</strong> [品牌名称]</p>
+                <p><strong>成果要点:</strong> [成果描述]</p>
+            </div>
+
+            <div class="case-card fade-in" onclick="alert('查看案例详情：城市绿洲主题快闪店')">
+                <h3>城市绿洲主题快闪店</h3>
+                <p><strong>匹配品牌:</strong> 户外运动品牌 X & 绿色饮品品牌 Y</p>
+                <p><strong>成果要点:</strong> 结合城市减压主题，打造快闪体验，提升年轻白领客群的参与度和转化率。</p>
+            </div>
+            <div class="case-card fade-in" onclick="alert('查看案例详情：AI 艺术品联名设计')">
+                <h3>AI 艺术品联名设计</h3>
+                <p><strong>匹配品牌:</strong> 科技教育品牌 E & 潮流艺术周边品牌 F</p>
+                <p><strong>成果要点:</strong> 探索科技美学边界，通过限量联名款吸引高净值科技爱好者，实现品牌溢价。</p>
+            </div>
+            <div class="case-card fade-in" onclick="alert('该案例仍在整理中...')">
+                <h3>[新案例待补充]</h3>
+                <p><strong>匹配品牌:</strong> [品牌名称]</p>
+                <p><strong>成果要点:</strong> [成果描述]</p>
+            </div>
+            </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach((el, index) => {
+                // 使用 setTimeout 让元素按顺序或带延迟地出现
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 150); // 稍微加快淡入速度
+            });
+        });
+    </script>
+</body>
+</html>
