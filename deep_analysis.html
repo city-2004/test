@@ -3,51 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>深度分析 - 开发中</title>
+    <title>基于用户交叉画像的深度分析 - BrandLink AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <style>
-        :root { --primary:#3661F0; --success:#00A968; --dark:#1A1A2E; --card:#27273F; --text:#EAEAEA; }
-        body { margin:0; background:var(--dark); color:var(--text); font-family:'Segoe UI',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
-        header { background:#161625; padding:18px 0; border-bottom:4px solid var(--primary); }
-        nav { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px; }
-        .logo { font-weight:bold; color:var(--primary); font-size:1.5em; }
-        .nav-links a { color:var(--text); margin:0 15px; text-decoration:none; font-weight:600; }
-        .nav-links a.active { color:var(--success); }
-        .mobile-menu { display:none; font-size:1.8em; cursor:pointer; }
+        :root {--primary:#3661F0; --success:#00A968; --dark:#0F0F1A; --card:#1A1A2E; --text:#EAEAEA;}
+        body {margin:0; font-family:'MiSans','Segoe UI',sans-serif; background:var(--dark); color:var(--text); min-height:100vh; display:flex; flex-direction:column;}
+        header {background:#0A0A12; padding:20px 0; border-bottom:4px solid var(--primary);}
+        nav {max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 20px;}
+        .logo {font-size:2em; font-weight:900; background:linear-gradient(90deg,#3661F0,#00A968); -webkit-background-clip:text; color:transparent;}
+        .nav-links a {color:var(--text); text-decoration:none; margin:0 20px; font-weight:600;}
+        .nav-links a.active {color:var(--success);}
+        .mobile-menu {display:none; font-size:1.8em; cursor:pointer;}
 
-        .container { flex:1; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px; }
-        .coming-soon { background:var(--card); padding:50px; border-radius:20px; max-width:600px; border-top:8px solid #dc3545; }
-        .coming-soon h1 { color:#dc3545; font-size:3em; }
-        .coming-soon p { font-size:1.3em; margin:20px 0; color:#ccc; }
+        .container {flex:1; display:flex; align-items:center; justify-content:center; padding:40px;}
+        .coming-card {background:var(--card); padding:60px; border-radius:20px; text-align:center; max-width:700px; border-top:8px solid var(--primary);}
+        .coming-card h1 {font-size:3.5em; color:var(--primary);}
+        .coming-card p {font-size:1.4em; margin:30px 0; color:#aaa;}
+        .search-bar {margin-top:40px;}
+        .search-bar input {width:100%; max-width:500px; padding:20px; border-radius:50px; border:none; background:#333; color:white; font-size:1.2em; text-align:center;}
+        .search-bar input::placeholder {color:#888;}
 
-        footer { text-align:center; padding:25px; background:#111; color:#666; }
+        footer {text-align:center; padding:30px; background:#0A0A12; color:#666;}
 
-        @media (max-width:768px) { .nav-links { display:none; flex-direction:column; position:fixed; top:70px; left:0; width:100%; background:#161625; padding:20px; }
-            .nav-links.active { display:flex; } .mobile-menu { display:block; } }
+        @media (max-width:768px) {.nav-links {display:none; position:fixed; top:76px; left:0; width:100%; background:#0A0A12; flex-direction:column; padding:20px 0;} .nav-links.active {display:flex;} .mobile-menu {display:block;}}
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">AI联名大师</div>
+            <div class="logo">BrandLink AI</div>
             <div class="nav-links" id="navLinks">
                 <a href="index.html">首页</a>
-                <a href="quick_gen.html">快速生成</a>
-                <a href="deep_analysis.html" class="active">深度分析</a>
+                <a href="analysis.html">品牌异业合作分析</a>
+                <a href="deep_analysis.html" class="active">用户交叉画像分析</a>
             </div>
             <div class="mobile-menu" id="mobileMenu"><i class="ri-menu-line"></i></div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="coming-soon">
-            <h1>深度分析模块即将上线</h1>
-            <p>基于用户画像交叉分析的精准品牌匹配引擎</p>
-            <p style="color:var(--success); font-weight:bold;">预计2025年Q3上线，敬请期待</p>
+        <div class="coming-card">
+            <h1>敬请期待</h1>
+            <p>基于用户交叉画像的深度分析</p>
+            
         </div>
     </div>
 
-    <footer>© 2025 AI联名大师</footer>
+    <footer>© 2025 BrandLink AI - 科学找到最匹配的联名对象</footer>
 
     <script>
         document.getElementById('mobileMenu').onclick = () => document.getElementById('navLinks').classList.toggle('active');
